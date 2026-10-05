@@ -1,0 +1,77 @@
+/* =========================================================
+   Thera+Vida — category-template.css (páginas de categoría)
+   ========================================================= */
+.cat-page .page-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--mist) 0%, #f7fbfd 60%, var(--teal-mist) 100%);
+  padding: calc(var(--header-h) + 56px) 0 80px;
+}
+.cat-page .page-hero::after {
+  content: "";
+  position: absolute; right: 4%; top: 22%;
+  width: 56px; height: 56px; opacity: .07;
+  background:
+    linear-gradient(var(--navy), var(--navy)) center / 32% 100% no-repeat,
+    linear-gradient(var(--navy), var(--navy)) center / 100% 32% no-repeat;
+}
+.cat-page .page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+  gap: 56px;
+  align-items: center;
+}
+.cat-page .page-hero-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 220px 220px 20px 20px;
+  box-shadow: 0 30px 60px -30px rgba(1, 45, 110, .35);
+}
+.cat-page .lead { font-size: 18px; }
+
+/* Índice de servicios de la categoría */
+.cat-page .service-index {
+  list-style: none; padding: 0; margin: 26px 0 0;
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.cat-page .service-index a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--navy);
+  font-size: 14px; font-weight: 600;
+  text-decoration: none;
+}
+.cat-page .service-index a:hover { border-color: var(--teal); color: var(--teal-dark); }
+
+/* Bloque por servicio (H2 + texto + enlace a la página del servicio) */
+.cat-page .service-block .rounded { aspect-ratio: 4 / 3; }
+.cat-page .service-block h2 a { color: inherit; text-decoration: none; }
+.cat-page .service-block h2 a:hover { color: var(--teal-dark); }
+.cat-page .more-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 600; color: var(--navy);
+  text-decoration: none;
+  border-bottom: 2px solid var(--teal);
+  padding-bottom: 2px;
+  margin-right: 22px;
+}
+.cat-page .more-link:hover { color: var(--teal-dark); }
+.cat-page .block-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 8px; }
+
+@media (max-width: 1024px) {
+  .cat-page .page-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .cat-page .page-hero-copy { text-align: center; }
+  .cat-page .page-hero-copy p { margin-left: auto; margin-right: auto; }
+  .cat-page .breadcrumbs ol, .cat-page .service-index, .cat-page .btn-row { justify-content: center; }
+  .cat-page .page-hero-img { max-width: 440px; margin: 0 auto; }
+  .cat-page .block-actions { justify-content: center; }
+}
+@media (max-width: 640px) {
+  .cat-page .page-hero { padding: calc(var(--header-h) + 32px) 0 56px; }
+  .cat-page .more-link { margin-right: 0; }
+  .cat-page .block-actions { flex-direction: column; }
+}

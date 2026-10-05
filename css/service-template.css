@@ -1,0 +1,107 @@
+/* =========================================================
+   Thera+Vida — service-template.css (páginas de servicio)
+   ========================================================= */
+.svc-page .page-hero {
+  position: relative;
+  background: linear-gradient(160deg, var(--mist) 0%, #f7fbfd 65%, var(--teal-mist) 100%);
+  padding: calc(var(--header-h) + 50px) 0 72px;
+}
+.svc-page .page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  gap: 56px;
+  align-items: center;
+}
+.svc-page .page-hero-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 300px 0 300px 300px;
+}
+.svc-page .lead { font-size: 18px; }
+.svc-page .quick-facts {
+  list-style: none; padding: 0; margin: 24px 0 0;
+  display: flex; flex-wrap: wrap; gap: 8px 22px;
+  font-size: 15px; font-weight: 600; color: var(--navy);
+}
+.svc-page .quick-facts li { display: flex; align-items: center; gap: 8px; }
+.svc-page .quick-facts li::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal);
+}
+
+/* Contenido principal en una columna legible + barra lateral */
+.svc-page .content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 64px;
+  align-items: start;
+}
+.svc-page .article h2 { margin-top: 1.4em; }
+.svc-page .article > h2:first-child { margin-top: 0; }
+.svc-page .article .split-img { margin: 32px 0; }
+.svc-page .article .split-img img { aspect-ratio: 16 / 10; border-radius: 6px; width: 100%; object-fit: cover; }
+
+.svc-page .benefits { list-style: none; padding: 0; margin: 10px 0 0; }
+.svc-page .benefits li {
+  padding: 16px 0 16px 38px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.svc-page .benefits li::before {
+  content: "";
+  position: absolute; left: 0; top: 19px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8'/%3E%3C/svg%3E") center / 15px no-repeat,
+    var(--teal);
+}
+.svc-page .benefits strong { display: block; margin-bottom: 2px; }
+
+.svc-page .price-box {
+  background: var(--mist);
+  border-radius: 20px;
+  padding: 28px 30px;
+  margin-top: 18px;
+}
+.svc-page .price-box p:last-of-type { margin-bottom: 18px; }
+
+/* Barra lateral */
+.svc-page .aside { position: sticky; top: 100px; display: grid; gap: 20px; }
+.svc-page .aside-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+}
+.svc-page .aside-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.svc-page .aside-card p { font-size: 15px; }
+.svc-page .aside-card .btn { width: 100%; font-size: 16px; padding: 15px 20px; }
+.svc-page .aside-card ul { list-style: none; padding: 0; margin: 0; }
+.svc-page .aside-card li + li { border-top: 1px solid var(--line); }
+.svc-page .aside-card li a {
+  display: block; padding: 10px 0;
+  color: var(--navy); font-weight: 500; font-size: 15px; text-decoration: none;
+}
+.svc-page .aside-card li a:hover { color: var(--teal-dark); }
+.svc-page .aside-card .parent-link { font-weight: 700; }
+
+@media (max-width: 1024px) {
+  .svc-page .page-hero-grid, .svc-page .content-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .svc-page .page-hero-copy { text-align: center; }
+  .svc-page .page-hero-copy p { margin-left: auto; margin-right: auto; }
+  .svc-page .breadcrumbs ol, .svc-page .quick-facts, .svc-page .btn-row { justify-content: center; }
+  .svc-page .page-hero-img { max-width: 400px; margin: 0 auto; }
+  .svc-page .aside { position: static; }
+}
+@media (max-width: 640px) {
+  .svc-page .page-hero { padding: calc(var(--header-h) + 30px) 0 52px; }
+  .svc-page .price-box { padding: 22px; }
+}
+
+.svc-page .article h3 {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 1.2em 0 .3em;
+}
